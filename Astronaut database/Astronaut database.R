@@ -27,6 +27,8 @@ astronauts$age_whn_sel <-
 astronauts$age_fist_mis <-
   astronauts$year_of_mission - astronauts$year_of_birth
 
+
+#create day column from total_eva_hrs
 astronauts$eva_in_day <- astronauts$total_eva_hrs / 24
 
 
