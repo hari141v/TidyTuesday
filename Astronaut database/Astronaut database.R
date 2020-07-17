@@ -7,13 +7,15 @@ tuesdata <- tidytuesdayR::tt_load('2020-07-14')
 
 astronauts <- tuesdata$astronauts
 
-data.frame(colSums(is.na(astronauts)))
+
 
 
 
 #occupation column having mixed(upper+lower case) letters, so convert it into lowercase
 astronauts$occupation <- tolower(astronauts$occupation)
 
+
+#In occupation column ,change the space tourist as other (space tourist)
 astronauts <- astronauts %>%
   mutate(occupation = recode(occupation,
                              `space tourist` = "other (space tourist)"))
